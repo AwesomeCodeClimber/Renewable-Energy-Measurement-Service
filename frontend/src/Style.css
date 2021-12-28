@@ -168,3 +168,107 @@ font-weight: 300 !important;
       text-align: center;
     }
 }
+
+
+/* About Section */
+
+.about {
+    width: 100%;
+    height: 2923px;
+    background: #1A2539;
+    color: white;
+    position: relative;
+}
+
+.about-text.container {
+    padding-top: 115px;
+}
+
+.about-text.container span {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+}
+
+.about-text.container p {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 44px;
+}
+
+.offer-container span {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    padding-bottom: 16px;
+}
+
+.offer-container h3 {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 44px;
+}
+
+.offer-text {
+    padding-bottom: 50px;
+}
+
+#offer-btn {
+    background-color: #588CC9;
+    border-radius: 50px;
+    border: none;
+
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 130%;
+    
+    text-align: center;
+    letter-spacing: 0.3px;
+    padding: 15px 30px;
+    /* margin-top: 50px; */
+}
+
+.offer-container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    position: absolute;
+    bottom: 192px;
+    left: 0; 
+    right: 0; 
+}
+
+@media (min-width: 1200px) {
+    .offer-container {
+        max-width: 1140px;
+    }
+}
+
+@media (min-width: 992px) {
+    .offer-container {
+        max-width: 960px;
+    }
+}
+
+@media (min-width: 768px) {
+    .offer-container {
+        max-width: 720px;
+    }
+}
+@media (min-width: 576px) {
+    .offer-container {
+        max-width: 540px;
+    }
+}
