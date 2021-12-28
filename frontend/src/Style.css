@@ -5,7 +5,13 @@
     width: 100%;
     padding: 0;
     color: #fff;
-  }
+}
+
+@media (min-width: 1600px) {
+    .container {
+        max-width: 1440px !important;
+    }
+}
 
 .navbar.navbar-expand-sm.navbar-transparent.bg-transparent {
     width: 100%;
@@ -170,9 +176,9 @@ font-weight: 300 !important;
 }
 
 
-/* About Section */
+/* About & Client Section */
 
-.about {
+.about, .client {
     width: 100%;
     height: 2923px;
     background: #1A2539;
@@ -180,11 +186,11 @@ font-weight: 300 !important;
     position: relative;
 }
 
-.about-text.container {
+.about-text.container, .client-text.container {
     padding-top: 115px;
 }
 
-.about-text.container span {
+.about-text.container span, .client-text.container span {
     font-family: Montserrat;
     font-style: normal;
     font-weight: 500;
@@ -192,7 +198,7 @@ font-weight: 300 !important;
     line-height: 24px;
 }
 
-.about-text.container p {
+.about-text.container p, .client-text.container p {
     font-family: Montserrat;
     font-style: normal;
     font-weight: normal;
@@ -276,5 +282,11 @@ font-weight: 300 !important;
 /* Cloud  */
 
 .cloud {
-    width: 30%;
+    width: 33%;
+}
+
+/* Client */
+
+.client-text .col {
+    padding:0;
 }

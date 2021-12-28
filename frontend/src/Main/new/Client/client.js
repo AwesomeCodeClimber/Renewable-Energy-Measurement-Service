@@ -6,7 +6,9 @@ export default function Client() {
     return (
         <>
             <Header />
+
             <MainClient />
+            
             <Footer />
         </>
     )
