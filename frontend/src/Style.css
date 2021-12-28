@@ -272,3 +272,9 @@ font-weight: 300 !important;
         max-width: 540px;
     }
 }
+
+/* Cloud  */
+
+.cloud {
+    width: 30%;
+}
