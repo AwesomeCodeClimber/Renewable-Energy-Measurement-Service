@@ -287,3 +287,108 @@ font-weight: 300 !important;
 .client-text .col {
     padding:0;
 }
+
+/* Google Map */
+
+.map-wrapper {
+    height: 60vh;
+    filter: drop-shadow(-1px 5px 3px #ccc);
+}
+.info-wrapper {
+    margin-top: 15px;
+}
+.map-details {
+    text-align: center;
+    font-size: 1.2em;
+}
+.map-details span {
+    font-weight: bold;
+}
+.search-input {
+    font-size: 1.2em;
+    width: 80%;
+}
+
+/* Modal */
+
+.vector {
+    padding-top: 18.8px;
+}
+
+.alert {
+    width: 100%;
+    height: 210px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0;
+    padding: 0;
+}
+
+.alert-wrapper {
+    width: 432px;
+    height: 210px;
+    background-color: rgba(37,61,101,0.75);
+    border-radius: 50px;
+    text-align: center;
+    position: absolute;
+    top: -53px;
+    margin: auto;
+    z-index: 1;
+}
+
+
+.alert-text {
+    font-family: Scope One;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 28px;
+    text-align: center;
+    padding-top: 10px;
+}
+  
+.btn-group {
+    display: flex !important;
+    justify-content: space-evenly;
+    border: none;
+    padding-top: 19px;
+}
+  
+.alert-btn {
+    background: #588CC9;
+    border-radius: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 15px 30px;
+    border: none;
+  
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 130%;
+    text-align: center;
+    letter-spacing: 0.3px;
+    color: #FFFFFF;
+}
+
+@media (max-width:576px) {
+    .alert-wrapper {
+        width: 90%;
+        top: 20px;
+        padding: 0 20px;
+    }
+    .alert-text {
+        font-size: 13px;
+    }
+    .alert-btn {
+        padding: 12px 23px;
+        font-size: 12px;
+    }
+}
+
+
+button:focus {
+    outline: none !important;
+}
