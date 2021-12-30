@@ -179,7 +179,7 @@ font-weight: 300 !important;
 
 .about, .client, .homepage {
     width: 100%;
-    height: 2923px;
+    min-height: 2923px;
     background: #1A2539;
     color: white;
     position: relative;
@@ -541,6 +541,7 @@ button:focus {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    zoom: 0.8;
 }
 
 /* Result Board */
@@ -620,12 +621,18 @@ button:focus {
     color: #607D8B;
 }
 
-.main-tool-board .col-sm-7.col-12 {
+.main-tool-board .col-sm-9.col-12 {
     margin: auto;
 }
 
-.main-tool-board .col:nth-child(2) {
+.main-tool-board .col-sm-12:nth-child(2) {
     display: flex;
+}
+
+@media (max-width: 420px) {
+    .main-tool-board .col-sm-9:nth-child(2) {
+        zoom: 0.8;
+    }
 }
 
 .center-circle {
@@ -662,4 +669,51 @@ button:focus {
 
 .main-tool-board.container .row {
     row-gap: 20px;
+}
+
+/* Big Circle & Small Circle */
+
+.big-circle {
+    background: #253D65;
+    font-family: Scope One;
+    font-style: normal;
+    font-weight: normal;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    display: table;
+    padding: 10px;
+    margin: auto;
+}
+
+.big-circle p {
+    font-size: 20px;
+    line-height: 28px;
+    text-align: center;
+    color: #FAFAFA;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.small-circle {
+    width: 350px;
+    height: 350px;
+    background: rgba(88,140,201,0.8);
+    border: 2px solid #588CC9;
+    box-sizing: border-box;
+    box-shadow: 0px 14px 20px rgba(250, 250, 250, 0.2);
+    border-radius: 50%;
+    display: table;
+    padding: 10px;
+    margin: auto;
+}
+
+.small-circle p{
+    font-family: Montserrat;
+    font-style: normal;
+    font-size: 18px;
+    line-height: 34px;
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
 }

@@ -12,12 +12,12 @@ export default function Chart() {
 
             <div className="chart">
                 <Row className="chart-row">
-                    <Col lg="9" md="12" xxl="12">
+                    <Col xl="9">
                         <div className="chart-area">
                             {/* Chart Here */}
                         </div>
                     </Col>
-                    <Col lg="3" md="12"  xxl="12" className="legend-column">
+                    <Col className="legend-column">
                         <div className="chart-legend container">
                             <div className="hydro-legend legend">
                                 <div className="hydro-dot dot"></div><span>Hydro power</span>
