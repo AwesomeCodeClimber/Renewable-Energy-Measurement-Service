@@ -57,6 +57,8 @@ class AutoComplete extends Component {
     render() {
         return (
             <Wrapper>
+                <p className="search-input-label">Find location on map</p>
+                <span className="fa fa-search form-control-feedback"></span>
                 <input
                     className="search-input"
                     ref={(ref) => {
@@ -64,7 +66,7 @@ class AutoComplete extends Component {
                     }}
                     type="text"
                     onFocus={this.clearSearchBox}
-                    placeholder="Enter a location"
+                    placeholder="Search city"
                 />
             </Wrapper>
         );

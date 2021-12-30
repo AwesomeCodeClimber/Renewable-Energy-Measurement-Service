@@ -7,7 +7,7 @@
 
 @media (min-width: 1600px) {
     .container {
-        max-width: 1440px !important;
+        max-width: 1600px !important;
     }
 }
 
@@ -290,10 +290,6 @@ font-weight: 300 !important;
 
 /* Google Map */
 
-.map-wrapper {
-    height: 60vh;
-    filter: drop-shadow(-1px 5px 3px #ccc);
-}
 .info-wrapper {
     margin-top: 15px;
 }
@@ -305,8 +301,74 @@ font-weight: 300 !important;
     font-weight: bold;
 }
 .search-input {
-    font-size: 1.2em;
-    width: 80%;
+    font-size: 18px;
+    border: 1px solid #012615;
+    width: 100%;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 140%;
+    padding: 13px 0 14px 45px;
+    background-image: url('./Main/new/Homepage/Map/searchicon.svg');
+    background-repeat: no-repeat;
+    background-position: left center;
+    outline: 0;
+    border-radius: 26px;
+}
+
+.fa-search:before {
+    content: "\f002";
+    font-size: 18px;
+}
+
+.fa.fa-search.form-control-feedback {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    width: 3.375rem;
+    height: 3.375rem;
+    line-height: 3.375rem;
+    text-align: center;
+    pointer-events: none;
+    color: #aaa;
+}
+
+.search-input-label {
+    font-family: Scope One;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 28px;
+    color: black;
+    text-align: left;
+    margin-bottom: 5px;
+    padding-left: 5px;
+}
+
+
+.main-map {
+    width: "100%";
+    height: "335px";
+    margin: "0";
+    padding: "0";
+    position: "relative";
+    border-radius: "50px";
+}
+
+.map-wrapper main>div:nth-child(2)>div {
+    border-radius: 50px;
+}
+
+.map-wrapper main>div:nth-child(1)>div {
+    padding: 20px 0;
+}
+
+/* Result Board */
+
+.result {
+    height: 522.19px;
+    background: rgba(184, 204, 217, 0.8);
+    border-radius: 50px;
 }
 
 /* Modal */
@@ -386,9 +448,166 @@ font-weight: 300 !important;
         padding: 12px 23px;
         font-size: 12px;
     }
+    .alert {
+        margin-bottom: 30px !important;
+    }
 }
 
 
 button:focus {
     outline: none !important;
+}
+
+/* Chart */
+.chart-wrapper {
+    position: relative;
+}
+
+.location p {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+} 
+
+.location h3 {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 44px;
+}
+
+.location span {
+    background: #F3A738;
+    border-radius: 50px;
+    font-family: Helvetica;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 18px;
+    padding: 3px 21px;
+    /* Renbloc Dark Blue */
+    color: #253D65;
+}
+
+.chart, .chart-row {
+    min-height: 550px;
+}
+
+.legend {
+    font-family: Scope One;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    display: flex;
+}
+
+@media (max-width: 576px) {
+    .legend {
+        font-size: 19px;
+    }
+}
+  
+.legend span {
+    padding-left: 25px;
+    padding-bottom: 15px;
+}
+.dot {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+  
+.hydro-dot {
+    background: #B8CCD9;
+}
+
+.wind-dot {
+    background: #9DBF84;
+}
+
+.solar-dot {
+    background: #F3A738;
+}
+.nonr-dot {
+    background: #586F7C;
+}
+  
+.hydro-circle, .wind-circle, .solar-circle, .nonr-circle {
+    border-radius: 50%;
+    text-align: center;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 45px;
+}
+
+.legend-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Result Board */
+.result {
+
+}
+
+.result-label {
+    font-family: Scope One;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 28px;
+    color: black;
+    padding-top: 50px;
+}
+
+.chart-board {
+    background: white;
+    color: black;
+    width: 80%;
+    margin: auto;
+    padding: 18px;
+}
+
+.score {
+    font-family: Helvetica;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 24px;
+    /* identical to box height, or 150% */
+    letter-spacing: 0.44px;
+    /* Dark Color */
+    color: #263238;
+}
+
+.score-text {
+    display: flex;
+    justify-content: space-between;
+}
+
+.score-text h3 {
+    font-family: Helvetica;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 24px;
+    /* identical to box height, or 150% */
+    letter-spacing: 0.44px;
+    /* Dark Color */
+    color: #263238;
+}
+
+.score-text span {
+    font-family: Helvetica;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 24px;
+    color: #253D65;
+    opacity: 0.9;
 }

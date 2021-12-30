@@ -5,8 +5,10 @@ import AutoComplete from './autocomplete';
 import Marker from './marker';
 
 const Wrapper = styled.main`
-  width: 100%;
-  height: 100%;
+    width: 100%;
+    background: rgba(184, 204, 217, 0.8);
+    border-radius: 50px;
+    padding: 30px;
 `;
 
 class MyGoogleMap extends Component {
@@ -127,6 +129,7 @@ class MyGoogleMap extends Component {
                     </div>
                 )}
                 <GoogleMapReact
+                    style={{ width: "100%", height: "335px", margin: "0", padding: "0", position: "relative", borderRadius: "50px"}}
                     center={this.state.center}
                     zoom={this.state.zoom}
                     draggable={this.state.draggable}
@@ -153,11 +156,11 @@ class MyGoogleMap extends Component {
 
                 </GoogleMapReact>
 
-                <div className="info-wrapper">
+                {/* <div className="info-wrapper">
                     <div className="map-details">Latitude: <span>{this.state.lat}</span>, Longitude: <span>{this.state.lng}</span></div>
                     <div className="map-details">Zoom: <span>{this.state.zoom}</span></div>
                     <div className="map-details">Address: <span>{this.state.address}</span></div>
-                </div>
+                </div> */}
 
 
             </Wrapper >

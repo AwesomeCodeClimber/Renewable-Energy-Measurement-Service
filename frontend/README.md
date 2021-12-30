@@ -91,13 +91,3 @@ Data: {
         "hydro": 0.16340338918613398
     }
 }
-
-
-### Project Rest part ###
-
-1. Front-end
-- Cloud Animation
-- bubble chart
-- Google map
-- Pie/Apple Chart 
-- 4 Ui/alert & Map & Result & 2 Circles
