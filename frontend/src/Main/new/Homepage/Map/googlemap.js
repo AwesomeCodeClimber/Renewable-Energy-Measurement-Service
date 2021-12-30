@@ -129,7 +129,7 @@ class MyGoogleMap extends Component {
                     </div>
                 )}
                 <GoogleMapReact
-                    style={{ width: "100%", height: "335px", margin: "0", padding: "0", position: "relative", borderRadius: "50px"}}
+                    style={{ width: "100%", height: "305px", margin: "0", padding: "0", position: "relative", borderRadius: "50px"}}
                     center={this.state.center}
                     zoom={this.state.zoom}
                     draggable={this.state.draggable}

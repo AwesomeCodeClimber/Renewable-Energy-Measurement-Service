@@ -11,6 +11,7 @@
     }
 }
 
+
 .navbar.navbar-expand-sm.navbar-transparent.bg-transparent {
     width: 100%;
     position: absolute;
@@ -348,7 +349,7 @@ font-weight: 300 !important;
 
 .main-map {
     width: "100%";
-    height: "335px";
+    height: "305px";
     margin: "0";
     padding: "0";
     position: "relative";
@@ -361,14 +362,6 @@ font-weight: 300 !important;
 
 .map-wrapper main>div:nth-child(1)>div {
     padding: 20px 0;
-}
-
-/* Result Board */
-
-.result {
-    height: 522.19px;
-    background: rgba(184, 204, 217, 0.8);
-    border-radius: 50px;
 }
 
 /* Modal */
@@ -551,9 +544,14 @@ button:focus {
 }
 
 /* Result Board */
-.result {
 
+.result {
+    height: 492.19px;
+    background: rgba(184, 204, 217, 0.8);
+    border-radius: 50px;
+    padding: 0 30px;
 }
+
 
 .result-label {
     font-family: Scope One;
@@ -568,9 +566,10 @@ button:focus {
 .chart-board {
     background: white;
     color: black;
-    width: 80%;
-    margin: auto;
     padding: 18px;
+    height: 74%;
+    max-height: 387px;
+    border-radius: 8px;
 }
 
 .score {
@@ -610,4 +609,57 @@ button:focus {
     line-height: 24px;
     color: #253D65;
     opacity: 0.9;
+}
+
+.score p {
+    font-family: Scope One;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 25px;
+    color: #607D8B;
+}
+
+.main-tool-board .col-sm-7.col-12 {
+    margin: auto;
+}
+
+.main-tool-board .col:nth-child(2) {
+    display: flex;
+}
+
+.center-circle {
+    background: rgba(88,140,201,0.8);
+    border-radius: 50%;
+    width: 390px;
+    height: 390px;
+    display: table;
+    padding: 10px;
+    margin: auto;
+}
+.center-circle p {
+    font-family: Scope One;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 28px;
+    text-align: center;
+
+    /* Renbloc White */
+
+    color: #FAFAFA;
+    display: table-cell;
+    vertical-align: middle;
+    
+}
+
+@media (min-width: 1200px) {
+
+    .main-tool-board.container {
+        max-width: 1350px;
+    }
+}
+
+.main-tool-board.container .row {
+    row-gap: 20px;
 }
