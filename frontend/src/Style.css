@@ -631,7 +631,7 @@ button:focus {
 
 @media (max-width: 420px) {
     .main-tool-board .col-sm-9:nth-child(2) {
-        zoom: 0.8;
+        zoom: 0.7;
     }
 }
 
@@ -671,6 +671,9 @@ button:focus {
     row-gap: 20px;
 }
 
+.main-tool-board .row:nth-child(1) {
+    margin-bottom: 100px;
+}
 /* Big Circle & Small Circle */
 
 .big-circle {
@@ -683,7 +686,6 @@ button:focus {
     border-radius: 50%;
     display: table;
     padding: 10px;
-    margin: auto;
 }
 
 .big-circle p {
@@ -705,7 +707,6 @@ button:focus {
     border-radius: 50%;
     display: table;
     padding: 10px;
-    margin: auto;
 }
 
 .small-circle p{
@@ -716,4 +717,45 @@ button:focus {
     text-align: center;
     display: table-cell;
     vertical-align: middle;
+}
+.small-circle-wrapper {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+@media (max-width: 992px) {
+    .big-circle, .small-circle {
+        margin: auto;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .offer-text span {
+        font-size: 18px;
+    }
+    .offer-text h3 {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 540px) {
+    .big-circle {
+        zoom: 0.55;
+    }
+    .small-circle {
+        zoom: 0.8;
+    }
+    .offer-text span {
+        font-size: 16px;
+    }
+    .offer-text h3 {
+        font-size: 20px;
+    }
+}
+
+.offer-text.row {
+    margin-left: 0;
+    margin-right: 0;
 }

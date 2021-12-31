@@ -57,12 +57,12 @@ export default function MainHomepage() {
                             </p>
                         </div>
                     </Col>
-                    <Col>
+                    <Col className="small-circle-wrapper">
                         <div className="small-circle">
                             <p>
-                                <h3>
+                                <b>
                                     Tip of the day!
-                                </h3>
+                                </b><br/>
                                 For a solar powered lunch,
                                 hold of heating it till 12:30.
                             </p>

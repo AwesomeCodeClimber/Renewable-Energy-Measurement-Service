@@ -20,7 +20,7 @@ class MyGoogleMap extends Component {
         mapApi: null,
         geoCoder: null,
         places: [],
-        center: [],
+        center: [59.3293, 18.0686], //Stockholm by default
         zoom: 10,
         address: '',
         draggable: true,
@@ -86,8 +86,6 @@ class MyGoogleMap extends Component {
         const geocoder = new mapApi.Geocoder;
 
         geocoder.geocode({ 'location': { lat: this.state.lat, lng: this.state.lng } }, (results, status) => {
-            // console.log(results);
-            // console.log(status);
             if (status === 'OK') {
                 if (results[0]) {
                     this.zoom = 12;

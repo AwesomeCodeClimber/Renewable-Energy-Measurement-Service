@@ -3,19 +3,26 @@ import { Link } from "react-router-dom";
 import { Fade } from 'react-slideshow-image';
 import { Navbar, Container, Nav } from 'react-bootstrap';
 
-import first from '../assets/img/header/default_bg.png'
-import second from '../assets/img/header/default_bg_dark_small.png'
+import wind from '../assets/img/header/wind.png'
+import wind_2 from '../assets/img/header/wind_2.png'
+import solar from '../assets/img/header/solar.png'
+// import hydro from '../assets/img/header/hydro.png'
+import bad_1 from '../assets/img/header/bad_1.png'
+import bad_2 from '../assets/img/header/bad_2.png'
+import bad_3 from '../assets/img/header/bad_3.png'
+
 import 'react-slideshow-image/dist/styles.css';
 import { ReactComponent as LogoIcon } from '../assets/img/logo.svg';
 
 const fadeImages = [
     {
-        url: first,
-        caption: 'First Slide'
+        url: wind
     },
     {
-        url: second,
-        caption: 'Second Slide'
+        url: wind_2
+    },
+    {
+        url: solar
     },
 ];
 function Header() {
