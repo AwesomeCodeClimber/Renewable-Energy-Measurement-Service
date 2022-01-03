@@ -13,7 +13,6 @@ const Wrapper = styled.main`
 
 class MyGoogleMap extends Component {
 
-
     state = {
         mapApiLoaded: false,
         mapInstance: null,

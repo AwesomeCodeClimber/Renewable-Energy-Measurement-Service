@@ -13,7 +13,6 @@ const Wrapper = styled.div`
 class AutoComplete extends Component {
     constructor(props) {
         super(props);
-        this.clearSearchBox = this.clearSearchBox.bind(this);
     }
 
     componentDidMount({ map, mapApi } = this.props) {
@@ -22,6 +21,7 @@ class AutoComplete extends Component {
             types: ['address'],
             // restrict your search to a specific country, or an array of countries
             // componentRestrictions: { country: ['gb', 'us'] },
+            componentRestrictions: {country: ['SE']}
         };
         this.autoComplete = new mapApi.places.Autocomplete(
             this.searchInput,
@@ -32,6 +32,7 @@ class AutoComplete extends Component {
     }
 
     componentWillUnmount({ mapApi } = this.props) {
+        console.log(mapApi);
         mapApi.event.clearInstanceListeners(this.searchInput);
     }
 
@@ -50,7 +51,7 @@ class AutoComplete extends Component {
         this.searchInput.blur();
     };
 
-    clearSearchBox() {
+    clearSearchBox = () => {
         this.searchInput.value = '';
     }
 
