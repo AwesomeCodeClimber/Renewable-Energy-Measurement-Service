@@ -759,3 +759,37 @@ button:focus {
     margin-left: 0;
     margin-right: 0;
 }
+
+.main-tool-board.container {
+    padding-bottom: 800px;
+}
+
+
+/* 
+@media (min-width: 320px) {
+    .map-grid {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+
+@media (min-width: 576px) {
+
+    .map-grid {
+        flex: 0 0 75%;
+        max-width: 75%;
+    }
+}
+
+
+@media (min-width: 1200px) {
+
+    .map-grid {
+        flex: 0 0 33.333333%;
+        max-width: 33.333333%;
+    }    
+}    
+
+.main-tool-board .map-grid {
+    margin: auto;
+} */

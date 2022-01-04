@@ -45,6 +45,7 @@ class MyGoogleMap extends Component {
     }
 
     _onChange = ({ center, zoom }) => {
+        console.log(center);
         this.props.changeLocation(center);
         this.setState({
             center: [center.lat, center.lng],
@@ -54,10 +55,10 @@ class MyGoogleMap extends Component {
     }
 
     _onClick = (value) => {
-        this.setState({
-            lat: value.lat,
-            lng: value.lng
-        });
+        // this.setState({
+        //     lat: value.lat,
+        //     lng: value.lng
+        // });
     }
 
     apiHasLoaded = (map, maps) => {
@@ -74,8 +75,10 @@ class MyGoogleMap extends Component {
         this.setState({
             places: [place],
             lat: place.geometry.location.lat(),
-            lng: place.geometry.location.lng()
+            lng: place.geometry.location.lng(),
+            center: [place.geometry.location.lat(), place.geometry.location.lng()],
         });
+        this.props.changeLocation([place.geometry.location.lat(), place.geometry.location.lng()]);
         this._generateAddress()
     };
 

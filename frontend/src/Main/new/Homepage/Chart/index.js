@@ -1,14 +1,20 @@
-import React from 'react'
+import React, { useState } from 'react'
 import axios from 'axios'
+import CustomeAxiosRequest from './request'
 
 import { Container, Row, Col } from 'react-bootstrap'
 
+
+
 export default function Chart(props) {
-
+    console.log(props.status);
+    const [percent, setPercent] = useState({});
+    
+    
     const getData = async () => {
-
+        
         let percent = {};
-
+        
         let obj = {
             headers: {
                 Authorization: "44f0245f0c2437dd47bf01f236cf2d1ead5f1262",
@@ -16,12 +22,17 @@ export default function Chart(props) {
                 y: props.center.lat
             }
         }
+        // await CustomeAxiosRequest("http://localhost:3005/data", "GET", obj.headers, 1);
 
         await axios.get("http://localhost:3005/data", obj)
             .then(res => {
                 if (res.status == 200) {
-                    res.data.error ? alert("Only Sweden City Possible !") : (percent = res.data);
-                    console.log(percent);
+                    if (res.data.error) {
+                        alert("Only Sweden City Possible !");
+                    } else {
+                        percent = res.data;
+                        setPercent(percent);
+                    }
                 }
                 else {
                     alert("Error");

@@ -25,6 +25,7 @@ async function getData(x, y, token) {
     var data;
     await axios(config).then((res) => {
         data = res.data;
+        console.log("data")
     }).catch((error) => {
         data = error.response.data;
         data.error = "Location Error";
@@ -34,9 +35,8 @@ async function getData(x, y, token) {
 }
 
 
-
-
 app.get('/data', async function (req, res) {
+    console.log(req.headers.x);
     let x = req.headers.x;
     let y = req.headers.y;
     let token = req.headers.authorization;

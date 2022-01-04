@@ -15,14 +15,14 @@ export default function MainHomepage() {
 
     const allowState = (_allow_state) => {
         setAlertState(_allow_state);
-        console.log(_allow_state);
         // alertstate == true ? 
         /** If alertstate is true, get lat and lng of current location, and pass those to Chart component */
     }
-    
+
     const changeLocation = (_center_changed) => {
         setCenter(_center_changed);
     }
+
 
     return (
         <div className="homepage">
@@ -34,12 +34,17 @@ export default function MainHomepage() {
             <Container className="main-tool-board">
                 <Row>
                     <Col xl="4" sm="9" xs="12" >
+                    {/* <div className="map-grid"> */}
+
                         <div className="map-wrapper">
                             <MyGoogleMap changeLocation={changeLocation} />
                         </div>
+                    {/* </div> */}
                     </Col>
 
                     <Col xl="4" sm="9" xs="12" >
+                    {/* <div className="map-grid"> */}
+
                         <div className="center-circle">
                             <p>
                                 Checking exactly what energy<br />
@@ -51,11 +56,15 @@ export default function MainHomepage() {
 
                             </p>
                         </div>
+                    {/* </div> */}
                     </Col>
                     <Col xl="4" sm="9" xs="12" >
+                    {/* <div className="map-grid"> */}
+
                         <div className="result-board">
                             <ResultBoard />
                         </div>
+                    {/* </div> */}
                     </Col>
                 </Row>
 

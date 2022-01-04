@@ -37,8 +37,7 @@ class AutoComplete extends Component {
 
     onPlaceChanged = ({ map, addplace } = this.props) => {
         const place = this.autoComplete.getPlace();
-        console.log(place);
-
+        
         if (!place.geometry) return;
         if (place.geometry.viewport) {
             map.fitBounds(place.geometry.viewport);
@@ -46,7 +45,7 @@ class AutoComplete extends Component {
             map.setCenter(place.geometry.location);
             map.setZoom(17);
         }
-
+        
         addplace(place);
         this.searchInput.blur();
     };
@@ -63,6 +62,7 @@ class AutoComplete extends Component {
                 <input
                     className="search-input"
                     ref={(ref) => {
+                        console.log(ref);
                         this.searchInput = ref;
                     }}
                     type="text"
