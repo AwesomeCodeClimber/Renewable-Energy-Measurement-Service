@@ -5,8 +5,6 @@ import { Container, Row, Col } from 'react-bootstrap'
 
 export default function Chart(props) {
 
-    console.log(props.center);
-
     const getData = async () => {
 
         let percent = {};

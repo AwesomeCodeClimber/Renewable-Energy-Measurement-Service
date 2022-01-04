@@ -15,7 +15,9 @@ export default function MainHomepage() {
 
     const allowState = (_allow_state) => {
         setAlertState(_allow_state);
-
+        console.log(_allow_state);
+        // alertstate == true ? 
+        /** If alertstate is true, get lat and lng of current location, and pass those to Chart component */
     }
     
     const changeLocation = (_center_changed) => {

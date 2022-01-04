@@ -37,6 +37,7 @@ class AutoComplete extends Component {
 
     onPlaceChanged = ({ map, addplace } = this.props) => {
         const place = this.autoComplete.getPlace();
+        console.log(place);
 
         if (!place.geometry) return;
         if (place.geometry.viewport) {

@@ -54,7 +54,6 @@ class MyGoogleMap extends Component {
     }
 
     _onClick = (value) => {
-        console.log(value);
         this.setState({
             lat: value.lat,
             lng: value.lng
@@ -72,7 +71,6 @@ class MyGoogleMap extends Component {
     };
 
     addPlace = (place) => {
-        // console
         this.setState({
             places: [place],
             lat: place.geometry.location.lat(),
@@ -94,10 +92,10 @@ class MyGoogleMap extends Component {
                     this.zoom = 12;
                     this.setState({ address: results[0].formatted_address });
                 } else {
-                    // window.alert('No results found');
+                    window.alert('No results found');
                 }
             } else {
-                // window.alert('Geocoder failed due to: ' + status);
+                window.alert('Geocoder failed due to: ' + status);
             }
 
         });
