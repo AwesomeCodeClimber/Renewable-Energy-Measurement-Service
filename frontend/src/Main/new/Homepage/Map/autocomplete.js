@@ -32,7 +32,6 @@ class AutoComplete extends Component {
     }
 
     componentWillUnmount({ mapApi } = this.props) {
-        console.log(mapApi);
         mapApi.event.clearInstanceListeners(this.searchInput);
     }
 

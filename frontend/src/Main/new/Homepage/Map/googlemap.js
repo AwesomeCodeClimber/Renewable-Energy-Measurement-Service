@@ -23,8 +23,9 @@ class MyGoogleMap extends Component {
         zoom: 10,
         address: '',
         draggable: true,
-        lat: null,
-        lng: null
+        lat: 59.3293,//Stockholm by default
+        lng: 18.0686,//Stockholm by default
+
     };
 
     componentWillMount() {
@@ -44,14 +45,16 @@ class MyGoogleMap extends Component {
     }
 
     _onChange = ({ center, zoom }) => {
+        this.props.changeLocation(center);
         this.setState({
-            center: center,
+            center: [center.lat, center.lng],
             zoom: zoom,
         });
 
     }
 
     _onClick = (value) => {
+        console.log(value);
         this.setState({
             lat: value.lat,
             lng: value.lng
@@ -69,6 +72,7 @@ class MyGoogleMap extends Component {
     };
 
     addPlace = (place) => {
+        // console
         this.setState({
             places: [place],
             lat: place.geometry.location.lat(),
@@ -153,11 +157,11 @@ class MyGoogleMap extends Component {
 
                 </GoogleMapReact>
 
-                {/* <div className="info-wrapper">
+                <div className="info-wrapper">
                     <div className="map-details">Latitude: <span>{this.state.lat}</span>, Longitude: <span>{this.state.lng}</span></div>
                     <div className="map-details">Zoom: <span>{this.state.zoom}</span></div>
                     <div className="map-details">Address: <span>{this.state.address}</span></div>
-                </div> */}
+                </div>
 
 
             </Wrapper >

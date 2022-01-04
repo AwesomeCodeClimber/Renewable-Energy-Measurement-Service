@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { Container, Row, Col } from 'react-bootstrap'
 
 import OfferSection from '../Public/offersection'
@@ -10,18 +10,30 @@ import ResultBoard from './resultboard'
 
 
 export default function MainHomepage() {
+    const [center, setCenter] = useState({ lat: 59.3293, lng: 18.0686 });
+    const [alertstate, setAlertState] = useState(false);
+
+    const allowState = (_allow_state) => {
+        setAlertState(_allow_state);
+
+    }
+    
+    const changeLocation = (_center_changed) => {
+        setCenter(_center_changed);
+    }
+
     return (
         <div className="homepage">
 
-            <Alert />
+            <Alert allowState={allowState} />
 
-            <Chart />
+            <Chart center={center} status={alertstate} />
 
             <Container className="main-tool-board">
                 <Row>
                     <Col xl="4" sm="9" xs="12" >
                         <div className="map-wrapper">
-                            <MyGoogleMap />
+                            <MyGoogleMap changeLocation={changeLocation} />
                         </div>
                     </Col>
 
@@ -62,7 +74,7 @@ export default function MainHomepage() {
                             <p>
                                 <b>
                                     Tip of the day!
-                                </b><br/>
+                                </b><br />
                                 For a solar powered lunch,
                                 hold of heating it till 12:30.
                             </p>
