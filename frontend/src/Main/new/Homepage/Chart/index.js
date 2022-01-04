@@ -22,7 +22,6 @@ export default function Chart(props) {
                 y: props.center.lat
             }
         }
-        // await CustomeAxiosRequest("http://localhost:3005/data", "GET", obj.headers, 1);
 
         await axios.get("http://localhost:3005/data", obj)
             .then(res => {
@@ -33,14 +32,19 @@ export default function Chart(props) {
                         percent = res.data;
                         setPercent(percent);
                     }
+                    return percent;
                 }
                 else {
                     alert("Error");
                 }
+                console.log(percent);
+                return percent;
             })
-    }
 
+    }
+    
     props.status == true ? getData(props.center) : '';
+    
 
     return (
         <Container fluid className="chart-wrapper">
