@@ -35,8 +35,6 @@ async function getData(x, y, token) {
 }
 
 
-
-
 app.get('/data', async function (req, res) {
     console.log(req.headers.x);
     let x = req.headers.x;

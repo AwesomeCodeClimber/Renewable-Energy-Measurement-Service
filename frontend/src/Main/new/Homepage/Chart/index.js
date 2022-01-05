@@ -8,13 +8,12 @@ import { Container, Row, Col } from 'react-bootstrap'
 
 export default function Chart(props) {
     console.log(props.status);
-    const [percent, setPercent] = useState({});
+    // const [percent, setPercent] = useState({});
+    var percent;
     
     
     const getData = async () => {
-        
-        let percent = {};
-        
+                
         let obj = {
             headers: {
                 Authorization: "44f0245f0c2437dd47bf01f236cf2d1ead5f1262",
@@ -30,7 +29,7 @@ export default function Chart(props) {
                         alert("Only Sweden City Possible !");
                     } else {
                         percent = res.data;
-                        setPercent(percent);
+                        console.log(percent);
                     }
                     return percent;
                 }
@@ -42,9 +41,13 @@ export default function Chart(props) {
             })
 
     }
-    
-    props.status == true ? getData(props.center) : '';
-    
+    var result;
+    // props.status == true ? getData(props.center) : '';
+    if(props.status == true) {
+        result = getData();
+        console.log(result);
+    } 
+        
 
     return (
         <Container fluid className="chart-wrapper">
