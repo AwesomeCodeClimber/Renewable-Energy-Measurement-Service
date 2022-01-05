@@ -62,7 +62,7 @@ class AutoComplete extends Component {
                 <input
                     className="search-input"
                     ref={(ref) => {
-                        console.log(ref);
+                        // console.log(ref);
                         this.searchInput = ref;
                     }}
                     type="text"

@@ -1,4 +1,4 @@
-export default function calPos (percentages) {
+export default function CalPos (percentages) {
 
     // We assume an order of percentages from server is like this:
     // .hydro-circle, .wind-circle, .solar-circle, .nonr-circle.
@@ -14,6 +14,6 @@ export default function calPos (percentages) {
                         { left: 800, top: 200 }   ];
 
     var flag = Math.floor((Math.random() * 2));
-    console.log(flag);
+    // console.log(flag);
     return flag ? positions1 : positions0;
 };

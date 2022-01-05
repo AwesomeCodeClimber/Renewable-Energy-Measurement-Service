@@ -7,7 +7,7 @@ import ChartApp from './chartapp'
 
 
 export default function Chart(props) {
-    console.log(props.status);
+    // console.log(props.status);
     const [percent, setPercent] = useState({});    
     
     const getData = async () => {

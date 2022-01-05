@@ -45,7 +45,7 @@ class MyGoogleMap extends Component {
     }
 
     _onChange = ({ center, zoom }) => {
-        console.log(center);
+        // console.log(center);
         this.props.changeLocation(center);
         this.setState({
             center: [center.lat, center.lng],

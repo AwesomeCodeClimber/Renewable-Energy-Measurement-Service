@@ -11,7 +11,7 @@ import ResultBoard from './resultboard'
 
 export default function MainHomepage() {
     const [center, setCenter] = useState({ lat: 59.3293, lng: 18.0686 });
-    const [alertstate, setAlertState] = useState(false);
+    const [alertstate, setAlertState] = useState(true);
 
     const allowState = (_allow_state) => {
         console.log("-------------------->")
