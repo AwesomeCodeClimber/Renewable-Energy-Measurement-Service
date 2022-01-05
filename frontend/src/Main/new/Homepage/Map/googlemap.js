@@ -95,10 +95,10 @@ class MyGoogleMap extends Component {
                     this.zoom = 12;
                     this.setState({ address: results[0].formatted_address });
                 } else {
-                    window.alert('No results found');
+                    // window.alert('No results found');
                 }
             } else {
-                window.alert('Geocoder failed due to: ' + status);
+                // window.alert('Geocoder failed due to: ' + status);
             }
 
         });

@@ -1,16 +1,14 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-import CustomeAxiosRequest from './request'
-
 import { Container, Row, Col } from 'react-bootstrap'
 
+import CustomeAxiosRequest from './request'
+import ChartApp from './chartapp'
 
 
 export default function Chart(props) {
     console.log(props.status);
-    // const [percent, setPercent] = useState({});
-    var percent;
-    
+    const [percent, setPercent] = useState({});    
     
     const getData = async () => {
                 
@@ -28,27 +26,22 @@ export default function Chart(props) {
                     if (res.data.error) {
                         alert("Only Sweden City Possible !");
                     } else {
-                        percent = res.data;
-                        console.log(percent);
+                        setPercent(res.data);
                     }
-                    return percent;
                 }
                 else {
                     alert("Error");
                 }
-                console.log(percent);
-                return percent;
             })
 
     }
-    var result;
-    // props.status == true ? getData(props.center) : '';
-    if(props.status == true) {
-        result = getData();
-        console.log(result);
-    } 
-        
 
+    useEffect(() => {   
+        if(props.status == true) {
+            getData();
+        };
+    }, [props.status])
+    
     return (
         <Container fluid className="chart-wrapper">
             <div className="location container">
@@ -61,7 +54,7 @@ export default function Chart(props) {
                 <Row className="chart-row">
                     <Col xl="9">
                         <div className="chart-area">
-                            {/* Chart Here */}
+                            <ChartApp percent={percent} />
                         </div>
                     </Col>
                     <Col className="legend-column">
