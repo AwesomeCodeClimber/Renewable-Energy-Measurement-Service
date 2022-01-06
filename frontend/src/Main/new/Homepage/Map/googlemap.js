@@ -19,7 +19,8 @@ class MyGoogleMap extends Component {
         mapApi: null,
         geoCoder: null,
         places: [],
-        center: [59.3293, 18.0686], //Stockholm by default
+        // center: [59.3293, 18.0686], //Stockholm by default
+        center: [57.7304, 12.9200],
         zoom: 10,
         address: '',
         draggable: true,

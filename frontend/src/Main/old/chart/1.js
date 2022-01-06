@@ -22,7 +22,6 @@ function frame(index, element) {
     }
 }
 
-
 /** Final Place */
 switch (index) {
     case 0:

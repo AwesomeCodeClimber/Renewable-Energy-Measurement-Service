@@ -7,9 +7,8 @@ import ChartApp from './chartapp'
 
 
 export default function Chart(props) {
-    // console.log(props.status);
-    const [percent, setPercent] = useState({});    
-    
+
+    const [percent, setPercent] = useState({});
     const getData = async () => {
                 
         let obj = {
@@ -19,6 +18,7 @@ export default function Chart(props) {
                 y: props.center.lat
             }
         }
+        console.log(obj)
 
         await axios.get("http://localhost:3005/data", obj)
             .then(res => {

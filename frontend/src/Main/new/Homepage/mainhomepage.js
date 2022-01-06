@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useCallback } from 'react'
 import { Container, Row, Col } from 'react-bootstrap'
 
 import OfferSection from '../Public/offersection'
@@ -14,13 +14,13 @@ export default function MainHomepage() {
     const [alertstate, setAlertState] = useState(true);
 
     const allowState = (_allow_state) => {
-        console.log("-------------------->")
         setAlertState(_allow_state);
     }
 
     const changeLocation = (_center_changed) => {
         setCenter(_center_changed);
     }
+    
 
 
     return (

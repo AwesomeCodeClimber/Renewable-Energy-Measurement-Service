@@ -1,34 +1,34 @@
 import React, { useEffect, useState } from "react";
-import CircleBoardGroup from "./CircleBoardGroup.js"
+import CircleGroupBoard from "./CircleGroupBoard.js"
 
 
-export default function App(props) {
+export default function ChartApp(props) {
     const [status, setStatus] = useState(false);
+    const [percent, setPercent] = useState([]);
+    let _orderedPercent;
 
-    var biRef = {};
-    var energyPercent;
-
-    const Allow = () => {
-        energyPercent = [(props.percent.sources.hydro * 100).toFixed(2),
-            (props.percent.sources.wind * 100).toFixed(2),
-            (props.percent.sources.thermal * 100).toFixed(2),
-            ((props.percent.sources.nuclear + props.percent.sources.unspecified) * 100).toFixed(2),
-        ];
-        console.log(energyPercent)
-
-        biRef.set_State(energyPercent);
+    const getSortedPercent = () => {
+        let hydro_ = Number((props.percent.sources.hydro * 100).toFixed(2));
+        let wind_ = Number((props.percent.sources.wind * 100).toFixed(2));
+        let solar_ = Number((props.percent.sources.thermal * 100).toFixed(2));
+        let nonr_ = Number(((props.percent.sources.unspecified + props.percent.sources.nuclear) * 100).toFixed(2));
+        _orderedPercent = [{ hydro: hydro_ }, { wind: wind_ }, { solar: solar_ }, { nonr: nonr_ }];
+        _orderedPercent.sort(function (a, b) {
+            return Object.values(a)[0] - Object.values(b)[0];
+        }).reverse();
     }
 
+
     useEffect(() => {
-        if(Object.keys(props.percent).length) {
-            Allow();
+        if (Object.keys(props.percent).length) {
+            getSortedPercent(); setPercent(_orderedPercent);
             setStatus(true);
         }
     }, [props.percent])
 
     return (
         <>
-            <CircleBoardGroup biRef={biRef} status={status} energyPercent={energyPercent} />
+            <CircleGroupBoard percent={percent} />
         </>
     )
 }

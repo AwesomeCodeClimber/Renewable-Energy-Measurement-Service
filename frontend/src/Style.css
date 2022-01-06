@@ -489,6 +489,41 @@ button:focus {
     min-height: 550px;
 }
 
+
+.hydro-1, .hydro-2, .wind-1,.wind-2, .solar-1,  .solar-2, .nonr-1, .nonr-2 {
+    border-radius: 50%;
+    text-align: center;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 45px;
+}
+  
+.hydro-1 {
+    background: linear-gradient(195.26deg, rgba(157,191,132,0.65) 23.55%, rgba(27,111,72,0.65) 90.31%);
+    box-shadow: 0px 30px 50px rgba(126, 175, 89, 0.75);
+    position: relative;
+}
+  
+.wind-1 {
+    background: linear-gradient(89.54deg, rgba(71,152,247,0.67) 0.46%, rgba(184,212,244,0.67) 118.27%);
+    box-shadow: 0px 30px 56.0453px rgba(88, 140, 201, 0.75);
+    position: relative;
+}
+  
+.solar-1 {
+    background: linear-gradient(89.54deg, rgba(243,167,56,0.67) 0.46%, rgba(240,205,154,0.67) 118.27%);
+    box-shadow: 0px 30px 56.0453px rgba(243, 167, 56, 0.75);
+    position: relative;
+}
+  
+.nonr-1 {
+    background: linear-gradient(89.54deg, rgba(88,111,124,0.67) 0.46%,rgba(23,84,118,0.67) 118.27%);
+    box-shadow: 0px 30px 56.0453px rgba(84, 91, 95, 0.75);
+    position: relative;
+}
+  
+
 .legend {
     font-family: Scope One;
     font-style: normal;
@@ -543,6 +578,11 @@ button:focus {
     justify-content: center;
     zoom: 0.8;
 }
+
+.chart-area, .hydro-circle-group, .wind-circle-group, .solar-circle-group, .nonr-circle-group {
+    position: absolute;
+}
+
 
 /* Result Board */
 
