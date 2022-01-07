@@ -19,13 +19,14 @@ class MyGoogleMap extends Component {
         mapApi: null,
         geoCoder: null,
         places: [],
-        // center: [59.3293, 18.0686], //Stockholm by default
-        center: [57.7304, 12.9200],
+        center: [59.3293, 18.0686], //Stockholm by default
         zoom: 10,
         address: '',
         draggable: true,
-        lat: 59.3293,//Stockholm by default
-        lng: 18.0686,//Stockholm by default
+        // lat: 59.3293,//Stockholm by default
+        // lng: 18.0686,//Stockholm by default
+        lat: null,
+        lng: null,
 
     };
 
@@ -46,12 +47,12 @@ class MyGoogleMap extends Component {
     }
 
     _onChange = ({ center, zoom }) => {
-        // console.log(center);
-        this.props.changeLocation(center);
         this.setState({
             center: [center.lat, center.lng],
             zoom: zoom,
         });
+        console.log(center)
+        this.props.changeLocation(center);
 
     }
 
@@ -80,6 +81,8 @@ class MyGoogleMap extends Component {
             center: [place.geometry.location.lat(), place.geometry.location.lng()],
         });
         this.props.changeLocation([place.geometry.location.lat(), place.geometry.location.lng()]);
+        // console.log(center)
+
         this._generateAddress()
     };
 
@@ -159,11 +162,11 @@ class MyGoogleMap extends Component {
 
                 </GoogleMapReact>
 
-                <div className="info-wrapper">
+                {/* <div className="info-wrapper">
                     <div className="map-details">Latitude: <span>{this.state.lat}</span>, Longitude: <span>{this.state.lng}</span></div>
                     <div className="map-details">Zoom: <span>{this.state.zoom}</span></div>
                     <div className="map-details">Address: <span>{this.state.address}</span></div>
-                </div>
+                </div> */}
 
 
             </Wrapper >

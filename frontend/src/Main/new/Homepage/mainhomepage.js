@@ -10,8 +10,9 @@ import ResultBoard from './resultboard'
 
 
 export default function MainHomepage() {
-    const [center, setCenter] = useState({ lat: 59.3293, lng: 18.0686 });
+    const [center, setCenter] = useState({});
     const [alertstate, setAlertState] = useState(true);
+    const [percent, setPercent] = useState([]);
 
     const allowState = (_allow_state) => {
         setAlertState(_allow_state);
@@ -20,29 +21,37 @@ export default function MainHomepage() {
     const changeLocation = (_center_changed) => {
         setCenter(_center_changed);
     }
-    
 
+    const setStateOfAlert = (value) => {
+        setAlertState(value);
+    }
+
+    const getPercent = (value) => {
+        setPercent(value);
+    }
 
     return (
         <div className="homepage">
 
-            <Alert allowState={allowState} />
+            <Alert allowState={allowState} centerChanged={center} />
 
-            <Chart center={center} status={alertstate} />
+            <Chart center={center} status={alertstate} setStateOfAlert={setStateOfAlert} getPercent={getPercent} />
+
+            <Cloud percent={percent} />
 
             <Container className="main-tool-board">
                 <Row>
                     <Col xl="4" sm="9" xs="12" >
-                    {/* <div className="map-grid"> */}
+                        {/* <div className="map-grid"> */}
 
                         <div className="map-wrapper">
                             <MyGoogleMap changeLocation={changeLocation} />
                         </div>
-                    {/* </div> */}
+                        {/* </div> */}
                     </Col>
 
                     <Col xl="4" sm="9" xs="12" >
-                    {/* <div className="map-grid"> */}
+                        {/* <div className="map-grid"> */}
 
                         <div className="center-circle">
                             <p>
@@ -55,15 +64,15 @@ export default function MainHomepage() {
 
                             </p>
                         </div>
-                    {/* </div> */}
+                        {/* </div> */}
                     </Col>
                     <Col xl="4" sm="9" xs="12" >
-                    {/* <div className="map-grid"> */}
+                        {/* <div className="map-grid"> */}
 
                         <div className="result-board">
                             <ResultBoard />
                         </div>
-                    {/* </div> */}
+                        {/* </div> */}
                     </Col>
                 </Row>
 
@@ -93,7 +102,6 @@ export default function MainHomepage() {
                 </Row>
             </Container>
 
-            {/* <Cloud /> */}
 
             <OfferSection />
         </div>

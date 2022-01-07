@@ -23,7 +23,9 @@ export default function Chart(props) {
         await axios.get("http://localhost:3005/data", obj)
             .then(res => {
                 if (res.status == 200) {
+                    console.log(res)
                     if (res.data.error) {
+                        console.log(res.data)
                         alert("Only Sweden City Possible !");
                     } else {
                         setPercent(res.data);
@@ -37,10 +39,10 @@ export default function Chart(props) {
     }
 
     useEffect(() => {   
-        if(props.status == true) {
+        if(props.status == true && Object.keys(props.center).length) {
             getData();
         };
-    }, [props.status])
+    }, [props.status, props.center])
     
     return (
         <Container fluid className="chart-wrapper">
@@ -54,7 +56,7 @@ export default function Chart(props) {
                 <Row className="chart-row">
                     <Col xl="9">
                         <div className="chart-area">
-                            <ChartApp percent={percent} />
+                            <ChartApp percent={percent} setStateOfAlert={props.setStateOfAlert} getPercent={props.getPercent}/>
                         </div>
                     </Col>
                     <Col className="legend-column">

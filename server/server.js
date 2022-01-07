@@ -25,21 +25,22 @@ async function getData(x, y, token) {
     var data;
     await axios(config).then((res) => {
         data = res.data;
-        console.log("data")
-    }).catch((error) => {
-        data = error.response.data;
-        data.error = "Location Error";
-    })
+    });
 
     return data;
 }
 
 
 app.get('/data', async function (req, res) {
-    console.log(req.headers.x);
     let x = req.headers.x;
     let y = req.headers.y;
     let token = req.headers.authorization;
-    var res_data = await getData(x, y, token);
+    var res_data = [];
+    try {
+        res_data = await getData(x, y, token);
+    } catch (error) {
+        if(error) res_data["error"] = "Server Error!"
+    }
+    console.log(res_data);
     res.send(res_data);
 });

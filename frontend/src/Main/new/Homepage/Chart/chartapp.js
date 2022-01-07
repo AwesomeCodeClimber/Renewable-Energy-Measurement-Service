@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import CircleGroupBoard from "./CircleGroupBoard.js"
 
-
 export default function ChartApp(props) {
     const [status, setStatus] = useState(false);
     const [percent, setPercent] = useState([]);
@@ -22,13 +21,14 @@ export default function ChartApp(props) {
     useEffect(() => {
         if (Object.keys(props.percent).length) {
             getSortedPercent(); setPercent(_orderedPercent);
+            props.getPercent(_orderedPercent);
             setStatus(true);
         }
     }, [props.percent])
 
     return (
         <>
-            <CircleGroupBoard percent={percent} />
+            <CircleGroupBoard percent={percent} setStateOfAlert={props.setStateOfAlert} />
         </>
     )
 }

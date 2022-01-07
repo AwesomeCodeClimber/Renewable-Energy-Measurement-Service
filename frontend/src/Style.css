@@ -286,9 +286,14 @@ font-weight: 300 !important;
     position: absolute;
     top: 900px;
 }
-@keyframes spin {
-    from {transform:rotate(0deg); }
-    to {transform:rotate(360deg);}
+@keyframes disappear {
+    from {transform:rotate(0deg); left: 0; opacity: 1;}
+    to {transform:rotate(180deg);left: 350px; opacity: 0; }
+}
+
+@keyframes appear {
+    from {transform:rotate(0deg); left: 350px; opacity: 0;}
+    to {transform:rotate(180deg);left: 700px; opacity: 1; }
 }
 
 .positive_1 {
@@ -304,8 +309,10 @@ font-weight: 300 !important;
     right: 0;
 }
 
-.negative {
-    display: none;
+
+.negative_2 {
+    width: 50%;
+    left: 25%;
 }
 
 /* Client */
@@ -480,6 +487,9 @@ button:focus {
 .chart-wrapper {
     position: relative;
 }
+.location {
+    padding-bottom: 20px;
+}
 
 .location p {
     font-family: Montserrat;
@@ -583,6 +593,48 @@ button:focus {
     font-size: 24px;
     display: flex;
 }
+
+
+/* 
+@media (max-width: 1440px) {
+    .hydro-1, .hydro-2, .solar-1, .solar-2, .wind-1, .wind-2, .nonr-1, .nonr-2 {
+        zoom: calc(144 / 192);
+    }
+}
+
+
+@media (max-width: 1200px) {
+    .hydro-1, .hydro-2, .solar-1, .solar-2, .wind-1, .wind-2, .nonr-1, .nonr-2 {
+        zoom: calc(120 / 192);
+    }
+}
+
+@media (max-width: 992px) {
+    .hydro-1, .hydro-2, .solar-1, .solar-2, .wind-1, .wind-2, .nonr-1, .nonr-2 {
+        zoom: calc(992 / 1920);
+    }
+}
+
+
+@media (max-width: 768px) {
+    .hydro-1, .hydro-2, .solar-1, .solar-2, .wind-1, .wind-2, .nonr-1, .nonr-2 {
+        zoom: calc(768 / 1920);
+    }
+}
+
+@media (max-width: 576px) {
+    .hydro-1, .hydro-2, .solar-1, .solar-2, .wind-1, .wind-2, .nonr-1, .nonr-2 {
+        zoom: calc(576 / 1920);
+    }
+}
+
+@media (max-width: 320px) {
+    .hydro-1, .hydro-2, .solar-1, .solar-2, .wind-1, .wind-2, .nonr-1, .nonr-2 {
+        zoom: calc(32 / 192);
+    }
+} */
+
+/*  */
 
 @media (max-width: 576px) {
     .legend {

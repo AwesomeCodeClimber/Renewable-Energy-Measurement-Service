@@ -5,11 +5,8 @@ import App from './App';
 import { BrowserRouter } from 'react-router-dom';
 import reportWebVitals from './reportWebVitals';
 
-// import "./App.css"
 import "./Style.css"
-
 import "./assets/css/bootstrap.min.css"
-
 
 ReactDOM.render(
   <React.StrictMode>
