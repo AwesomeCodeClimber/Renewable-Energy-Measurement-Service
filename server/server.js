@@ -22,6 +22,7 @@ async function getData(x, y, token) {
             y: Number(y)
         }
     };
+
     var data;
     await axios(config).then((res) => {
         data = res.data;
@@ -35,12 +36,13 @@ app.get('/data', async function (req, res) {
     let x = req.headers.x;
     let y = req.headers.y;
     let token = req.headers.authorization;
-    var res_data = [];
+    var responseData = {};
     try {
-        res_data = await getData(x, y, token);
+        responseData = await getData(x, y, token);
     } catch (error) {
-        if(error) res_data["error"] = "Server Error!"
+        if(error) {
+            responseData["error"] = "Server Error!";
+        }
     }
-    console.log(res_data);
-    res.send(res_data);
+    res.send(responseData);
 });

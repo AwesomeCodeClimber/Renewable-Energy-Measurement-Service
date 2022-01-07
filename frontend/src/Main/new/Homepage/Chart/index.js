@@ -4,11 +4,14 @@ import { Container, Row, Col } from 'react-bootstrap'
 
 import CustomeAxiosRequest from './request'
 import ChartApp from './chartapp'
+import Notification from './notification'
 
 
 export default function Chart(props) {
 
     const [percent, setPercent] = useState({});
+    const [error, setError] = useState(0);
+
     const getData = async () => {
                 
         let obj = {
@@ -23,10 +26,9 @@ export default function Chart(props) {
         await axios.get("http://localhost:3005/data", obj)
             .then(res => {
                 if (res.status == 200) {
-                    console.log(res)
                     if (res.data.error) {
-                        console.log(res.data)
-                        alert("Only Sweden City Possible !");
+                        if(res.data.error == 'Server Error!') setError(1);
+                        else setError(2);
                     } else {
                         setPercent(res.data);
                     }
@@ -77,6 +79,7 @@ export default function Chart(props) {
                     </Col>
                 </Row>
             </div>
+            <Notification error={error}/>
         </Container>
     )
 }
