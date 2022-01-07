@@ -183,6 +183,7 @@ font-weight: 300 !important;
     background: #1A2539;
     color: white;
     position: relative;
+    z-index: 1;
 }
 
 .about-text.container, .client-text.container {
@@ -281,6 +282,30 @@ font-weight: 300 !important;
 
 .cloud {
     width: 33%;
+    z-index: -1;
+    position: absolute;
+    top: 900px;
+}
+@keyframes spin {
+    from {transform:rotate(0deg); }
+    to {transform:rotate(360deg);}
+}
+
+.positive_1 {
+    left: 0;
+}
+
+.positive_2 {
+    width: 50%;
+    left: 25%;
+}
+
+.positive_3 {
+    right: 0;
+}
+
+.negative {
+    display: none;
 }
 
 /* Client */
@@ -485,7 +510,11 @@ button:focus {
     color: #253D65;
 }
 
-.chart, .chart-row {
+.chart {
+    height: 900px;
+}
+
+.chart-row {
     min-height: 550px;
 }
 
@@ -502,27 +531,50 @@ button:focus {
 .hydro-1 {
     background: linear-gradient(195.26deg, rgba(157,191,132,0.65) 23.55%, rgba(27,111,72,0.65) 90.31%);
     box-shadow: 0px 30px 50px rgba(126, 175, 89, 0.75);
-    position: relative;
+    position: absolute;
 }
   
 .wind-1 {
     background: linear-gradient(89.54deg, rgba(71,152,247,0.67) 0.46%, rgba(184,212,244,0.67) 118.27%);
     box-shadow: 0px 30px 56.0453px rgba(88, 140, 201, 0.75);
-    position: relative;
+    position: absolute;
 }
   
 .solar-1 {
     background: linear-gradient(89.54deg, rgba(243,167,56,0.67) 0.46%, rgba(240,205,154,0.67) 118.27%);
     box-shadow: 0px 30px 56.0453px rgba(243, 167, 56, 0.75);
-    position: relative;
+    position: absolute;
 }
   
 .nonr-1 {
     background: linear-gradient(89.54deg, rgba(88,111,124,0.67) 0.46%,rgba(23,84,118,0.67) 118.27%);
     box-shadow: 0px 30px 56.0453px rgba(84, 91, 95, 0.75);
-    position: relative;
+    position: absolute;
+}
+
+.hydro-2 {
+    background: linear-gradient(195.26deg, rgba(157,191,132,0.65) 23.55%, rgba(27,111,72,0.65) 90.31%);
+    box-shadow: 0px 30px 50px rgba(126, 175, 89, 0.75);
+    position: absolute;
 }
   
+.wind-2 {
+    background: linear-gradient(89.54deg, rgba(71,152,247,0.67) 0.46%, rgba(184,212,244,0.67) 118.27%);
+    box-shadow: 0px 30px 56.0453px rgba(88, 140, 201, 0.75);
+    position: absolute;
+}
+  
+.solar-2 {
+    background: linear-gradient(89.54deg, rgba(243,167,56,0.67) 0.46%, rgba(240,205,154,0.67) 118.27%);
+    box-shadow: 0px 30px 56.0453px rgba(243, 167, 56, 0.75);
+    position: absolute;
+}
+  
+.nonr-2 {
+    background: linear-gradient(89.54deg, rgba(88,111,124,0.67) 0.46%,rgba(23,84,118,0.67) 118.27%);
+    box-shadow: 0px 30px 56.0453px rgba(84, 91, 95, 0.75);
+    position: absolute;
+}
 
 .legend {
     font-family: Scope One;

@@ -178,6 +178,7 @@ function Homepage() {
 
             const element = document.getElementsByClassName(`${Object.keys(item)[0]}-circle`)[0];
             element.innerHTML = `${item[Object.keys(item)]}<small>%</small>`;
+            
             let elemWidth;
             if (item[Object.keys(item)] <= 10) {
                 elemWidth = 150;
