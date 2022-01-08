@@ -19,16 +19,18 @@ export default function Cloud(props) {
     useEffect(() => {
 
         /** Normal Animation */
-        positiveAnimation();
+        if(props.percent && Object.keys()) {
+            positiveNormalAnimation(true);
+        }
 
 
     }, [props.percent])
 
-    const positiveAnimation = () => {
+    const positiveNormalAnimation = (value) => {
         /**  First Positive Cloud */
         const elementFst = positiveFst.current;
         const firstWidth = elementFst.width - 100;
-        elementFst.animate([
+        const firstPositiveAnimation = elementFst.animate([
             // keyframes
             { transform: 'rotate(0deg)', left: '-100px', opacity: '1' },
             { transform: 'rotate(180deg)', left: `calc(100% - ${firstWidth}px)`, opacity: '1' },
@@ -44,7 +46,7 @@ export default function Cloud(props) {
         /**  Second Positive Cloud */
         const elementSnd = positiveSnd.current;
         const secondWidth = elementSnd.width-100;
-        elementSnd.animate([
+        const secondPositiveAnimation = elementSnd.animate([
             // keyframes
             { transform: 'rotate(0deg)', left: `calc((100% - ${secondWidth}px) / 2)`, opacity: '1' },
             { transform: 'rotate(180deg)', left: `calc(100% - ${secondWidth}px)`, opacity: '1' },
@@ -62,7 +64,7 @@ export default function Cloud(props) {
         /**  Third Positive Cloud */
         const elementTrd = positiveTrd.current;
         const thirdWidth = elementTrd.width-100;
-        elementTrd.animate([
+        const thirdPositiveAnimation = elementTrd.animate([
             // keyframes
             { transform: 'rotate(0deg)', right: '100px', opacity: '1' },
             { transform: 'rotate(-180deg)', right: `calc(100% - ${thirdWidth}px)`, opacity: '1' },
@@ -74,6 +76,10 @@ export default function Cloud(props) {
             animationTimingFunction: 'linear',
             iterations: Infinity,
         });
+    }
+
+    const animationFunction = () => {
+
     }
 
 
