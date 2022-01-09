@@ -20,89 +20,17 @@ export default function Cloud(props) {
 
         /** Normal Animation */
         if (props.percent) {
-            const positiveAnimatedElements = positiveNormalAnimation(true);
             if (props.percent.length && props.percent[0] && Object.keys(props.percent[0])[0] == 'nonr' && Object.values(props.percent[0]) > 50) {
                 positiveAnimatedElements.map((each, index) => {
                     each.pause();
-                    // getCurrentPosition();
                     console.log(getComputedStyle(positiveSnd.current).getPropertyValue('left'))
                 })
             }
         }
 
-
     }, [props.percent])
 
-    const positiveNormalAnimation = (value) => {
-        if (value == true) {
-
-        }
-        /**  First Positive Cloud */
-        const elementFst = positiveFst.current;
-        const firstWidth = elementFst.width - 100;
-        const firstPositiveAnimation = elementFst.animate([
-            // keyframes
-            { transform: 'rotate(0deg)', left: '-100px', opacity: '1' },
-            { transform: 'rotate(180deg)', left: `calc(100% - ${firstWidth}px)`, opacity: '1' },
-            { transform: 'rotate(0deg)', left: '100px', opacity: '1' },
-
-        ], {
-            // timing options
-            duration: 150000,
-            animationTimingFunction: 'linear',
-            iterations: Infinity
-        });
-
-        /**  Second Positive Cloud */
-        const elementSnd = positiveSnd.current;
-        const secondWidth = elementSnd.width - 100;
-        const secondPositiveAnimation = elementSnd.animate([
-            // keyframes
-            { transform: 'rotate(0deg)', left: `calc((100% - ${secondWidth}px) / 2)`, opacity: '1' },
-            { transform: 'rotate(180deg)', left: `calc(100% - ${secondWidth}px)`, opacity: '1' },
-            { transform: 'rotate(360deg)', left: `calc((100% - ${secondWidth}px) / 2)`, opacity: '1' },
-            { transform: 'rotate(180deg)', left: `0`, opacity: '1' },
-            { transform: 'rotate(0deg)', left: `calc((100% - ${secondWidth}px) / 2)`, opacity: '1' },
-
-        ], {
-            // timing options
-            duration: 80000,
-            animationTimingFunction: 'linear',
-            iterations: Infinity
-        });
-
-        /**  Third Positive Cloud */
-        const elementTrd = positiveTrd.current;
-        const thirdWidth = elementTrd.width - 100;
-        const thirdPositiveAnimation = elementTrd.animate([
-            // keyframes
-            { transform: 'rotate(0deg)', right: '100px', opacity: '1' },
-            { transform: 'rotate(-180deg)', right: `calc(100% - ${thirdWidth}px)`, opacity: '1' },
-            { transform: 'rotate(0deg)', right: '100px', opacity: '1' },
-
-        ], {
-            // timing options
-            duration: 200000,
-            animationTimingFunction: 'linear',
-            iterations: Infinity,
-        });
-
-        return [firstPositiveAnimation, secondPositiveAnimation, thirdPositiveAnimation];
-    }
-
-    const getCurrentPosition = () => {
-        var moving = false;
-        const el = positiveSnd.current;
-        function getPosition() {
-            var rect = el.getBoundingClientRect()
-            console.log(rect.top, rect.left);
-            if (!moving) {
-                window.requestAnimationFrame(getPosition);
-            }
-        }
-        window.requestAnimationFrame(getPosition);
-    }
-
+    
     return (
         <div className="cloud-section">
             <div className="positive">
