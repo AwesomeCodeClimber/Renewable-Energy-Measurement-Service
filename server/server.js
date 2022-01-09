@@ -15,7 +15,7 @@ async function getData(x, y, token) {
 
     var config = {
         method: 'get',
-        url: 'http://django-server.eba-fxx3p9xj.us-west-2.elasticbeanstalk.com/api/test_detailed_grid/',
+        url: 'http://34.22.18.66/api/test_detailed_grid/',
         headers: {
             Authorization: token,
             x: Number(x),
@@ -40,6 +40,7 @@ app.get('/data', async function (req, res) {
     try {
         responseData = await getData(x, y, token);
     } catch (error) {
+        console.log(error);
         if(error) {
             responseData["error"] = "Server Error!";
         }

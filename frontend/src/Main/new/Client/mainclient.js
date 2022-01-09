@@ -8,7 +8,7 @@ export default function MainClient() {
     return (
         <div className="client">
             <Container className="client-text">
-                <Row>
+                {/* <Row> */}
                     <Row>
                         <span>Trusted by industry leaders</span>
                         <p>Join the energy transparency revolution<br />
@@ -18,14 +18,14 @@ export default function MainClient() {
                         <br />
                     </Row>
                     <Row>
-                        <Col>
+                        <Col xs="12" sm="6">
                             <div className="near-phone">
                                 <p>Do you know what energy is powering your screens right now? Is it wind? Nuclear? Coal?<br /><br />
                                     If you want to make the switch for a greener energy consumption you need to start by answering the question; what energy sources am I consuming right now?<br /><br />
                                     At renbloc we grant you that insight through what we call energy transparency. We let you know exactly what energy source you're consuming, right now. Accurate down to a kilometer, allowing you to drastically reduce your carbon emissions. </p>
                             </div>
                         </Col>
-                        <Col>
+                        <Col xs="12" sm="6">
                             <img className="iphone" alt="iphone-mockup" src={phone} />
                         </Col>
                     </Row>
@@ -35,7 +35,7 @@ export default function MainClient() {
                             The energy future is bright, sustainable and renewable. Join us on this journey, and let us lower your carbon emissions - starting right now!
                         </p>
                     </Row>
-                </Row>
+                {/* </Row> */}
             </Container>
         
             <Cloud />

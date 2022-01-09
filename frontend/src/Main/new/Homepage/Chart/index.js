@@ -29,6 +29,30 @@ export default function Chart(props) {
                     if (res.data.error) {
                         if(res.data.error == 'Server Error!') setError(1);
                         else setError(2);
+                        // setPercent({
+                        //     "final_index": 27.3,
+                        //     "X": 11.0,
+                        //     "Y": 59.0,
+                        //     "sources": {
+                        //         "nuclear": 0.5761031126269958,
+                        //         "thermal": 0.13619981597974304,
+                        //         "wind": 0.10963689156892753,
+                        //         "unspecified": 0.0146567906381997,
+                        //         "hydro": 0.16340338918613398
+                        //     }
+                        // });
+                        // setPercent({
+                        //     "final_index": 27.3,
+                        //     "X": 11.0,
+                        //     "Y": 59.0,
+                        //     "sources": {
+                        //         "nuclear": 0.13619981597974304,
+                        //         "thermal": 0.5761031126269958,
+                        //         "wind": 0.10963689156892753,
+                        //         "unspecified": 0.0146567906381997,
+                        //         "hydro": 0.16340338918613398
+                        //     }
+                        // })
                     } else {
                         setPercent(res.data);
                     }

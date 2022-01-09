@@ -167,6 +167,7 @@ font-weight: 300 !important;
     font-size: 16px;
     line-height: 22px;
     color: #000000;
+    padding-bottom: 30px;
 }
 
 @media (max-width: 576px) {
@@ -206,6 +207,62 @@ font-weight: 300 !important;
     font-weight: normal;
     font-size: 36px;
     line-height: 44px;
+}
+@media (max-width: 576px) {
+    .about-text.container {
+        width: 95%;
+        padding-right: 15px;
+        padding-left: 15px;
+        margin-right: auto;
+        margin-left: auto;
+        /* height: 2500px; */
+    }
+    .about-text.container p {
+        font-size: 20px;
+    }
+    .about-text.container span {
+        font-size: 16px;
+    }
+
+
+}
+
+@media (max-width: 768px) {
+
+    .client-text.container {
+        width: 95%;
+        padding-right: 15px;
+        padding-left: 15px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+    .client-text.container p {
+        font-size: 20px;
+    }
+    .client-text.container span {
+        font-size: 16px;
+    }
+    .iphone {
+        width: 100%;
+        /* display: flex;
+        flex: 100%; */
+    }
+    .client {
+        min-height: 4000px;
+    }
+    .offer-container .row:nth-child(2) {
+        margin-right:0;
+        margin-left: 0;
+    }
+}
+
+.col-sm-6.col-12 {
+    padding: 0;
+}
+
+
+.about-text.container .row {
+    flex-direction: column;
 }
 
 .offer-container span {
