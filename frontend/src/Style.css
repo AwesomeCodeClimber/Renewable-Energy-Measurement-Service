@@ -348,6 +348,12 @@ font-weight: 300 !important;
     position: absolute;
     top: 900px;
 }
+.positive img {
+    opacity: 0;
+}
+.negative img {
+    opacity: 0;
+}
 
 .negative_2 {
     width: 50%;
