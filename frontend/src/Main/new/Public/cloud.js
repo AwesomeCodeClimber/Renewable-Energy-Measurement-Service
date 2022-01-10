@@ -38,6 +38,11 @@ export default function Cloud(props) {
             }
 
         }
+        else if(!props.percent) {
+            
+            positiveAppearAnimation();
+            setPositiveTotalAnimations(positiveMoveAnimation());
+        }
 
     }, [props.percent])
 
@@ -46,9 +51,9 @@ export default function Cloud(props) {
     const positiveMoveAnimation = () => {
         let _firstPositive = positiveFst.current.animate(
             [
-                { left: '0', transform: 'rotate(0deg)', opacity: 1 },
-                { left: '100%', transform: 'rotate(30deg)', opacity: 1 },
-                { left: '0', transform: 'rotate(0deg)', opacity: 1 }
+                { left: '0', transform: 'rotate(180deg)', opacity: 1 },
+                { left: '100%', transform: 'rotate(210deg)', opacity: 1 },
+                { left: '0', transform: 'rotate(180deg)', opacity: 1 }
             ],
             {
                 duration: 300000,
@@ -61,11 +66,11 @@ export default function Cloud(props) {
 
         let _secondPositive = positiveSnd.current.animate(
             [
-                { left: '50%', transform: 'rotate(0)', opacity: 1 },
-                { left: '100%', transform: 'rotate(180deg)', opacity: 1 },
-                { left: '50%', transform: 'rotate(360deg)', opacity: 1 },
-                { left: '0%', transform: 'rotate(180deg)', opacity: 1 },
-                { left: '50%', transform: 'rotate(0)', opacity: 1 },
+                { left: '50%', transform: 'rotate(180deg)', opacity: 1 },
+                { left: '100%', transform: 'rotate(360deg)', opacity: 1 },
+                { left: '50%', transform: 'rotate(180deg)', opacity: 1 },
+                { left: '0%', transform: 'rotate(0deg)', opacity: 1 },
+                { left: '50%', transform: 'rotate(180deg)', opacity: 1 },
             ],
             {
                 duration: 300000,
@@ -78,9 +83,9 @@ export default function Cloud(props) {
 
         let _thirdPositive = positiveTrd.current.animate(
             [
-                { right: '0', transform: 'rotate(0deg)', opacity: 1 },
-                { right: '100%', transform: 'rotate(30deg)', opacity: 1 },
-                { right: '0', transform: 'rotate(0deg)', opacity: 1 }
+                { right: '0', transform: 'rotate(180deg)', opacity: 1 },
+                { right: '100%', transform: 'rotate(210deg)', opacity: 1 },
+                { right: '0', transform: 'rotate(210deg)', opacity: 1 }
             ],
             {
                 duration: 300000,
@@ -98,7 +103,7 @@ export default function Cloud(props) {
         positiveFst.current.animate(
             [
                 { transform: 'rotate(0deg)', opacity: 0, left: 0 },
-                { transform: 'rotate(360deg)', opacity: 1, left: 0 },
+                { transform: 'rotate(180deg)', opacity: 1, left: 0 },
 
             ],
             {
@@ -111,7 +116,7 @@ export default function Cloud(props) {
         positiveSnd.current.animate(
             [
                 { transform: 'rotate(0deg)', opacity: 0, left: '50%' },
-                { transform: 'rotate(360deg)', opacity: 1, left: '50%' },
+                { transform: 'rotate(180deg)', opacity: 1, left: '50%' },
 
             ],
             {
@@ -123,7 +128,7 @@ export default function Cloud(props) {
         positiveTrd.current.animate(
             [
                 { transform: 'rotate(0deg)', opacity: 0, right: '0' },
-                { transform: 'rotate(360deg)', opacity: 1, right: '0' },
+                { transform: 'rotate(180deg)', opacity: 1, right: '0' },
 
             ],
             {
@@ -135,17 +140,15 @@ export default function Cloud(props) {
 
     const positiveDisappearAnimation = () => {
         if (positiveTotalAnimations.length) {
-            console.log(positiveTotalAnimations)
             positiveTotalAnimations.forEach((each, index) => {
                 each.pause();
 
                 if (index == 0) {
-                    console.log(getComputedStyle(positiveFst.current).getPropertyValue('left'))
                     let firstFrame = new KeyframeEffect(
                         positiveFst.current,
                         [
                             { transform: 'rotate(0)', opacity: 1, left: getComputedStyle(positiveFst.current).getPropertyValue('left') }, // keyframe
-                            { transform: 'rotate(360deg)', opacity: 0, left: getComputedStyle(positiveFst.current).getPropertyValue('left') } // keyframe
+                            { transform: 'rotate(180deg)', opacity: 0, left: getComputedStyle(positiveFst.current).getPropertyValue('left') } // keyframe
                         ],
                         { duration: 2000, fill: 'forwards' }
 
@@ -158,7 +161,7 @@ export default function Cloud(props) {
                         positiveSnd.current,
                         [
                             { transform: 'rotate(0)', opacity: 1, left: getComputedStyle(positiveSnd.current).getPropertyValue('left') }, // keyframe
-                            { transform: 'rotate(360deg)', opacity: 0, left: getComputedStyle(positiveSnd.current).getPropertyValue('left') } // keyframe
+                            { transform: 'rotate(180deg)', opacity: 0, left: getComputedStyle(positiveSnd.current).getPropertyValue('left') } // keyframe
                         ],
                         { duration: 2000, fill: 'forwards' }
                     )
@@ -171,7 +174,7 @@ export default function Cloud(props) {
                         positiveTrd.current,
                         [
                             { transform: 'rotate(0)', opacity: 1, left: getComputedStyle(positiveTrd.current).getPropertyValue('left') }, // keyframe
-                            { transform: 'rotate(360deg)', opacity: 0, left: getComputedStyle(positiveTrd.current).getPropertyValue('left') } // keyframe
+                            { transform: 'rotate(180deg)', opacity: 0, left: getComputedStyle(positiveTrd.current).getPropertyValue('left') } // keyframe
                         ],
                         { duration: 2000, fill: 'forwards' }
                     )
@@ -188,9 +191,9 @@ export default function Cloud(props) {
     const negativeMoveAnimation = () => {
         let _firstNegative = negativeFst.current.animate(
             [
-                { left: '0', transform: 'rotate(0deg)', opacity: 1 },
-                { left: '100%', transform: 'rotate(30deg)', opacity: 1 },
-                { left: '0', transform: 'rotate(0deg)', opacity: 1 }
+                { left: '0', transform: 'rotate(180deg)', opacity: 1 },
+                { left: '100%', transform: 'rotate(210deg)', opacity: 1 },
+                { left: '0', transform: 'rotate(180deg)', opacity: 1 }
             ],
             {
                 duration: 300000,
@@ -203,11 +206,11 @@ export default function Cloud(props) {
 
         let _secondNegative = negativeSnd.current.animate(
             [
-                { left: '50%', transform: 'rotate(0)', opacity: 1 },
-                { left: '100%', transform: 'rotate(180deg)', opacity: 1 },
-                { left: '50%', transform: 'rotate(360deg)', opacity: 1 },
-                { left: '0%', transform: 'rotate(180deg)', opacity: 1 },
-                { left: '50%', transform: 'rotate(0)', opacity: 1 },
+                { left: '50%', transform: 'rotate(180)', opacity: 1 },
+                { left: '100%', transform: 'rotate(360deg)', opacity: 1 },
+                { left: '50%', transform: 'rotate(180deg)', opacity: 1 },
+                { left: '0%', transform: 'rotate(0deg)', opacity: 1 },
+                { left: '50%', transform: 'rotate(180deg)', opacity: 1 },
             ],
             {
                 duration: 300000,
@@ -220,9 +223,9 @@ export default function Cloud(props) {
 
         let _thirdNegative = negativeTrd.current.animate(
             [
-                { right: '0', transform: 'rotate(0deg)', opacity: 1 },
-                { right: '100%', transform: 'rotate(30deg)', opacity: 1 },
-                { right: '0', transform: 'rotate(0deg)', opacity: 1 }
+                { right: '0', transform: 'rotate(180deg)', opacity: 1 },
+                { right: '100%', transform: 'rotate(210deg)', opacity: 1 },
+                { right: '0', transform: 'rotate(180deg)', opacity: 1 }
             ],
             {
                 duration: 300000,
@@ -240,7 +243,7 @@ export default function Cloud(props) {
         negativeFst.current.animate(
             [
                 { transform: 'rotate(0deg)', opacity: 0, left: 0 },
-                { transform: 'rotate(360deg)', opacity: 1, left: 0 },
+                { transform: 'rotate(180deg)', opacity: 1, left: 0 },
 
             ],
             {
@@ -253,7 +256,7 @@ export default function Cloud(props) {
         negativeSnd.current.animate(
             [
                 { transform: 'rotate(0deg)', opacity: 0, left: '50%' },
-                { transform: 'rotate(360deg)', opacity: 1, left: '50%' },
+                { transform: 'rotate(180deg)', opacity: 1, left: '50%' },
 
             ],
             {
@@ -265,7 +268,7 @@ export default function Cloud(props) {
         negativeTrd.current.animate(
             [
                 { transform: 'rotate(0deg)', opacity: 0, right: '0' },
-                { transform: 'rotate(360deg)', opacity: 1, right: '0' },
+                { transform: 'rotate(180deg)', opacity: 1, right: '0' },
 
             ],
             {
@@ -277,17 +280,15 @@ export default function Cloud(props) {
 
     const negativeDisappearAnimation = () => {
         if (negativeTotalAnimations.length) {
-            console.log(negativeTotalAnimations)
             negativeTotalAnimations.forEach((each, index) => {
                 each.pause();
 
                 if (index == 0) {
-                    console.log(getComputedStyle(negativeFst.current).getPropertyValue('left'))
                     let firstFrame = new KeyframeEffect(
                         negativeFst.current,
                         [
                             { transform: 'rotate(0)', opacity: 1, left: getComputedStyle(negativeFst.current).getPropertyValue('left') }, // keyframe
-                            { transform: 'rotate(360deg)', opacity: 0, left: getComputedStyle(negativeFst.current).getPropertyValue('left') } // keyframe
+                            { transform: 'rotate(180deg)', opacity: 0, left: getComputedStyle(negativeFst.current).getPropertyValue('left') } // keyframe
                         ],
                         { duration: 2000, fill: 'forwards' }
 
@@ -300,7 +301,7 @@ export default function Cloud(props) {
                         negativeSnd.current,
                         [
                             { transform: 'rotate(0)', opacity: 1, left: getComputedStyle(negativeSnd.current).getPropertyValue('left') }, // keyframe
-                            { transform: 'rotate(360deg)', opacity: 0, left: getComputedStyle(negativeSnd.current).getPropertyValue('left') } // keyframe
+                            { transform: 'rotate(180deg)', opacity: 0, left: getComputedStyle(negativeSnd.current).getPropertyValue('left') } // keyframe
                         ],
                         { duration: 2000, fill: 'forwards' }
                     )
@@ -313,7 +314,7 @@ export default function Cloud(props) {
                         negativeTrd.current,
                         [
                             { transform: 'rotate(0)', opacity: 1, left: getComputedStyle(negativeTrd.current).getPropertyValue('left') }, // keyframe
-                            { transform: 'rotate(360deg)', opacity: 0, left: getComputedStyle(negativeTrd.current).getPropertyValue('left') } // keyframe
+                            { transform: 'rotate(180deg)', opacity: 0, left: getComputedStyle(negativeTrd.current).getPropertyValue('left') } // keyframe
                         ],
                         { duration: 2000, fill: 'forwards' }
                     )
