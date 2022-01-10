@@ -21,10 +21,11 @@ export default function Cloud(props) {
         /** Normal Animation */
         if (props.percent) {
             if (props.percent.length && props.percent[0] && Object.keys(props.percent[0])[0] == 'nonr' && Object.values(props.percent[0]) > 50) {
-                positiveAnimatedElements.map((each, index) => {
-                    each.pause();
-                    console.log(getComputedStyle(positiveSnd.current).getPropertyValue('left'))
-                })
+                // console.log(positiveAnimatedElements)
+                // positiveAnimatedElements.map((each, index) => {
+                //     each.pause();
+                //     console.log(getComputedStyle(positiveSnd.current).getPropertyValue('left'))
+                // })
             }
         }
 

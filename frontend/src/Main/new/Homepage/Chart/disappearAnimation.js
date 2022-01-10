@@ -11,8 +11,6 @@ export default function drawDisappearAnimation (parentElement, classKey) {
         let opacity = 1;
         
         id = setInterval(disappearFrame, 1);
-        // console.log()
-        console.log(_start_top)
 
         function disappearFrame() {
             if (opacity <= 0) {

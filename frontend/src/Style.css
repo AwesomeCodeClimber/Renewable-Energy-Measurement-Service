@@ -26,6 +26,9 @@
     width: 100%;
     justify-content: space-around;
 }
+.navbar-nav a:hover {
+    text-decoration: none;
+}
 
 .navbar-link {
     color: white;
@@ -561,7 +564,7 @@ button:focus {
 }
 
 .chart-row {
-    min-height: 550px;
+    min-height: 900px;
 }
 
 
@@ -799,6 +802,14 @@ button:focus {
     font-size: 18px;
     line-height: 25px;
     color: #607D8B;
+}
+
+.apexcharts-canvas {
+    margin: auto;
+}
+
+#chart {
+    zoom: 0.9;
 }
 
 .main-tool-board .col-sm-9.col-12 {

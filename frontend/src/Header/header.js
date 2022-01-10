@@ -6,7 +6,7 @@ import { Navbar, Container, Nav } from 'react-bootstrap';
 import wind from '../assets/img/header/wind.png'
 import wind_2 from '../assets/img/header/wind_2.png'
 import solar from '../assets/img/header/solar.png'
-// import hydro from '../assets/img/header/hydro.png'
+
 import bad_1 from '../assets/img/header/bad_1.png'
 import bad_2 from '../assets/img/header/bad_2.png'
 import bad_3 from '../assets/img/header/bad_3.png'
@@ -14,18 +14,59 @@ import bad_3 from '../assets/img/header/bad_3.png'
 import 'react-slideshow-image/dist/styles.css';
 import { ReactComponent as LogoIcon } from '../assets/img/logo.svg';
 
-const fadeImages = [
-    {
-        url: wind
-    },
-    {
-        url: wind_2
-    },
-    {
-        url: solar
-    },
-];
-function Header() {
+function Header(props) {
+
+    const [fadeImages, setFadeImages] = React.useState([
+        {
+            url: wind
+        },
+        {
+            url: wind_2
+        },
+        {
+            url: solar
+        },
+    ])
+
+    React.useEffect(() => {
+        if (props.percent && props.percent.length) {
+            let resultScore = 0;
+            props.percent.forEach(element => {
+                if (Object.keys(element)[0] != 'nonr') {
+                    resultScore += Object.values(element)[0];
+                }
+            });
+            
+            if(resultScore >= 50) {
+                setFadeImages([
+                    {
+                        url: wind
+                    },
+                    {
+                        url: wind_2
+                    },
+                    {
+                        url: solar
+                    },
+                ])
+            }
+            else {
+                setFadeImages([
+                    {
+                        url: bad_1
+                    },
+                    {
+                        url: bad_2
+                    },
+                    {
+                        url: bad_3
+                    },
+                ])
+            }
+
+        }
+    }, [props.percent])
+    
     return (
         <div className="header">
             <Navbar expand="sm" bg="transparent" variant="transparent" >

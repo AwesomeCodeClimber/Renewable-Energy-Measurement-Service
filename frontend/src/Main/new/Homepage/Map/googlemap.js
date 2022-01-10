@@ -18,7 +18,7 @@ class MyGoogleMap extends Component {
         mapInstance: null,
         mapApi: null,
         geoCoder: null,
-        places: [],
+        places: ['Solnaasd'],
         center: [59.3293, 18.0686], //Stockholm by default
         zoom: 10,
         address: '',
@@ -52,6 +52,7 @@ class MyGoogleMap extends Component {
             zoom: zoom,
         });
         console.log(center)
+        this.props.getPlace(this.state.places)
         this.props.changeLocation(center);
 
     }
@@ -81,7 +82,8 @@ class MyGoogleMap extends Component {
             center: [place.geometry.location.lat(), place.geometry.location.lng()],
         });
         this.props.changeLocation([place.geometry.location.lat(), place.geometry.location.lng()]);
-        // console.log(center)
+        console.log(place)
+        this.props.getPlace(this.state.places);
 
         this._generateAddress()
     };
@@ -146,7 +148,7 @@ class MyGoogleMap extends Component {
                     onChildClick={() => console.log('child click')}
                     onClick={this._onClick}
                     bootstrapURLKeys={{
-                        // key: 'AIzaSyAM9uE4Sy2nWFfP-Ha6H8ZC6ghAMKJEKps',
+                        key: 'AIzaSyCz1wJXBPMIbEqijShDryV0SKF_vf9uO8s',
                         libraries: ['places', 'geometry'],
                     }}
                     yesIWantToUseGoogleMapApiInternals

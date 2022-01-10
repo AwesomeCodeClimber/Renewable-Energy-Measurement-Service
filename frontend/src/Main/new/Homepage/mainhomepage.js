@@ -9,8 +9,9 @@ import Alert from './alert'
 import ResultBoard from './resultboard'
 
 
-export default function MainHomepage() {
+export default function MainHomepage(props) {
     const [center, setCenter] = useState({});
+    const [place, setPlace] = useState(['Stockholm']);
     const [alertstate, setAlertState] = useState(true);
     const [percent, setPercent] = useState([]);
 
@@ -28,14 +29,21 @@ export default function MainHomepage() {
 
     const getPercent = (value) => {
         setPercent(value);
+        props.getPercent(value);
     }
+    
+    const getPlace = (value) => {
+        setPlace(value);
+    }
+
+
 
     return (
         <div className="homepage">
 
             <Alert allowState={allowState} centerChanged={center} />
 
-            <Chart center={center} status={alertstate} setStateOfAlert={setStateOfAlert} getPercent={getPercent} />
+            <Chart center={center} status={alertstate} setStateOfAlert={setStateOfAlert} getPercent={getPercent} place={place} />
 
             <Cloud percent={percent} />
 
@@ -45,7 +53,7 @@ export default function MainHomepage() {
                         {/* <div className="map-grid"> */}
 
                         <div className="map-wrapper">
-                            <MyGoogleMap changeLocation={changeLocation} />
+                            <MyGoogleMap changeLocation={changeLocation} getPlace={getPlace} />
                         </div>
                         {/* </div> */}
                     </Col>
@@ -70,7 +78,7 @@ export default function MainHomepage() {
                         {/* <div className="map-grid"> */}
 
                         <div className="result-board">
-                            <ResultBoard />
+                            <ResultBoard percent={percent} />
                         </div>
                         {/* </div> */}
                     </Col>
