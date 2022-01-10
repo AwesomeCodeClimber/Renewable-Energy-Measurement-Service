@@ -18,7 +18,7 @@ class MyGoogleMap extends Component {
         mapInstance: null,
         mapApi: null,
         geoCoder: null,
-        places: ['Solnaasd'],
+        places: [],
         center: [59.3293, 18.0686], //Stockholm by default
         zoom: 10,
         address: '',
